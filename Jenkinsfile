@@ -20,5 +20,10 @@ pipeline {
                 sh 'docker run -d -p 8081:8080 --name mycontainer myapp:latest'
             }
         }
+        stage('Clean Old Container') {
+            steps {
+                sh 'docker rm -f mycontainer || true'
+            }
+        }
     }
 }
