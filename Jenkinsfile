@@ -7,6 +7,9 @@ pipeline {
         SONAR_HOST_URL = "http://192.168.1.14:9000"
         SONAR_AUTH_TOKEN = credentials('sonarqube') // Jenkins credential ID
     }
+	  tools {
+        jdk 'jdk17' // name of JDK configured in Jenkins
+    }
     stages {
         stage('Checkout Code') {
             steps {
