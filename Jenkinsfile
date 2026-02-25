@@ -1,9 +1,9 @@
 pipeline {
     agent any
     environment {
-        IMAGE_NAME = "myapp"
-        CONTAINER_NAME = "myapp_container"
-        PORT_MAPPING = "8080:8080"
+IMAGE_NAME = "studentapp"
+        CONTAINER_NAME = "studentcontainer"
+        PORT_MAPPING = "8081:8080"
         SONAR_HOST_URL = "http://192.168.1.14:9000"
         SONAR_AUTH_TOKEN = credentials('sonarqube') // Jenkins credential ID
     }
