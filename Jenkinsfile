@@ -8,7 +8,7 @@ pipeline {
         SONAR_AUTH_TOKEN = credentials('sonarqube') // Jenkins credential ID
     }
 	  tools {
-        jdk 'jdk17' // name of JDK configured in Jenkins
+        jdk 'JAVA_HOME' // name of JDK configured in Jenkins
     }
     stages {
         stage('Checkout Code') {
