@@ -2,15 +2,22 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
+
+        stage('Clone Repository') {
             steps {
-                checkout scm
+                git 'https://github.com/seifLahmer/student-management'
             }
         }
 
-        stage('Run') {
+        stage('Build Docker Image') {
             steps {
-                sh 'date'
+                sh 'docker build -t myapp:latest .'
+            }
+        }
+
+        stage('Run Container') {
+            steps {
+                sh 'docker run -d -p 8081:8080 --name mycontainer myapp:latest'
             }
         }
     }
