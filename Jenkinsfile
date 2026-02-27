@@ -4,7 +4,7 @@ pipeline {
 IMAGE_NAME = "studentapp"
         CONTAINER_NAME = "studentcontainer"
         PORT_MAPPING = "8081:8080"
-        SONAR_HOST_URL = "http://192.168.50.4:9000"
+        SONAR_HOST_URL = "http://192.168.33.10:9000"
         SONAR_AUTH_TOKEN = credentials('sonarqube') // Jenkins credential ID
     }
 	  tools {
